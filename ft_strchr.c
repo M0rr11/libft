@@ -1,0 +1,23 @@
+#include <stdlib.h>
+
+char *ft_strchr(const char *s, int c)
+{
+    int i;
+    i = 0;
+    while(s[i])
+    {
+        if(s[i] == c )
+        return (char *)s + i;
+    i++;
+    }
+    return NULL;
+}
+#include <string.h>
+#include <stdio.h>
+int main()
+{
+    char s[] = "mango";
+    //char *r = ft_strchr(s,'g');
+    char *r = strchr(s,'g');
+    printf("%s\n",r);
+}
