@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "libft.h"
 
 char *ft_strchr(const char *s, int c)
 {
@@ -7,17 +7,8 @@ char *ft_strchr(const char *s, int c)
     while(s[i])
     {
         if(s[i] == c )
-        return (char *)s + i;
-    i++;
+          return (char *)s + i;
+        i++;
     }
     return NULL;
-}
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-    char s[] = "mango";
-    //char *r = ft_strchr(s,'g');
-    char *r = strchr(s,'g');
-    printf("%s\n",r);
 }

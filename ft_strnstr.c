@@ -1,11 +1,11 @@
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
+
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
     size_t i;
     i = 0;
-    if(needle == NULL)
-    return (char *)needle;
+    if (needle == NULL)
+      return (char *)needle;
     while(haystack[i] && i < len)
     {
         if(haystack[i] == needle[0])
@@ -15,16 +15,5 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
         }
         i++;
     }
-    // if(!(needle[i]))
-    // return 
     return NULL;
-}
-
-#include <bsd/string.h>
-#include <stdio.h>
-int main()
-{
-    printf("%s\n", strnstr("foo bar baz bar s","bar", 4000));
-    printf("%s", ft_strnstr("foo bar baz bar s","bar", 4000));
-    printf("\n");
 }
