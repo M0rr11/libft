@@ -1,22 +1,24 @@
+#include <stdint.h>
 int ft_atoi(const char *s)
 {
     int r;
-    int s;
+    int si;
     int i;
     r = 0;
-    s = 1;
+    si = 1;
     i = 0;
-    while(s[i] == ' ' || s[i] == '\t')
-    i++;
-    while(s[i] == '+' || s[i] == '-')
+    while (s[i] == ' ' || s[i] == '\t')
+      i++;
+    if (s[i] == '-' || s[i] == '+')
     {
-        while(s[i] == '-')
-        s = -1;
-    i++;
+        if (s[i] == '-')
+            si = -1;
+        i++;
     }
-    while(s[i] >= '0' && s[i] <= '9')
+    while (s[i] >= '0' && s[i] <= '9')
     {
         r = r * 10 + (s[i] - 48);
         i++;
     }
+    return (r * si);
 }
