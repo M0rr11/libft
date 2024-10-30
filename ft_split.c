@@ -1,12 +1,12 @@
 #include "libft.h"
 
-int count(char *s)
+int count(char *s,char c)
 {
     int i = 0,count = 0;
 
         while(s[i])
         {
-            if(s[i] != ' ' && s[i] != '\t' && (s[i+1] == ' ' || s[i+1] == '\t' || s[i+1] == '\0'))
+            if(s[i] != c && (s[i + 1] == c || s[i+1] == '\0'))
                 count++;
             i++;
         }
@@ -14,7 +14,7 @@ int count(char *s)
 }
 char	**ft_split(char const *str, char c)
 {
-    int ct = count(str);
+    int ct = count(str, c);
     char **sp = (char **) malloc((ct + 1) * sizeof(char *));
     if(sp == NULL)
         return NULL;
