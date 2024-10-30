@@ -30,13 +30,13 @@ char	**ft_split(char const *str, char c)
         
         sp[j] = (char *) malloc((l + 1) * sizeof(char));
         j++;
-        if(str[i] == ' ' || str[i] == '\t')
+        if(str[i] == c)
             i++;
     }
     j = 0;
     i = 0;
     int f;
-    while(str[i] == ' ' || str[i] == '\t')
+    while(str[i] == c)
       i++;
     while(j < ct && str[i])
     {
