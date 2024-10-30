@@ -20,16 +20,14 @@ char	**ft_split(char const *str, char c)
         return NULL;
 
     int i = 0,j = 0,l;
-    while(str[i] == ' ' || str[i] == '\t')
+    while(str[i] == c)
       i++;
-    while(j < c && str[i])
+    while(j < ct && str[i])
     {
         l = 0;
-        while(str[i] && str[i] != ' ' && str[i] != '\t')
-        {
+        while(str[i + l] && str[i + l] != c)
             l++;
-            i++;
-        }
+        
         sp[j] = (char *) malloc((l + 1) * sizeof(char));
         j++;
         if(str[i] == ' ' || str[i] == '\t')
@@ -40,18 +38,14 @@ char	**ft_split(char const *str, char c)
     int f;
     while(str[i] == ' ' || str[i] == '\t')
       i++;
-    while(j < c && str[i])
+    while(j < ct && str[i])
     {
         f = 0;
-        while(str[i] && str[i] != ' ' && str[i] != '\t')
-        {
-            sp[j][f] = str[i];
-            i++;
-            f++;
-        }
+        while(str[i] && str[i] != c)
+            sp[j][f++] = str[i++];
         sp[j][f] = '\0';
         j++;
-        if(str[i] == ' ' || str[i] == '\t')
+        if(str[i] == c)
             i++;
     }
     sp[j] = NULL; 
