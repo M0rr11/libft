@@ -4,6 +4,9 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 {
     char *d = (char *)dest;
     const char *s = (const char *)src;
+    
+    if (d == s || n == 0)
+        return dest;
     size_t i;
     i = 0;
     if (d > s) {
