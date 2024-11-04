@@ -6,12 +6,18 @@
 /*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:47:51 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 20:07:55 by nyx              ###   ########.fr       */
+/*   Updated: 2024/11/04 20:15:27 by nyx              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void ft_lstiter(t_list *lst, void (*f)(void *)) {
+  if (!lst || !f)
+    return;
   
-    }
+  while (lst) {
+    f(lst->content);
+    lst = lst->next;
+  }
+}
