@@ -6,13 +6,18 @@
 /*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:47:55 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 19:17:17 by nyx              ###   ########.fr       */
+/*   Updated: 2024/11/04 20:05:20 by nyx              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 t_list *ft_lstlast(t_list *lst) {
-  
-  
-        }
+  if (!lst)
+    return NULL;
+
+  while (lst->next != NULL) {
+    lst = lst->next;
+  }
+  return (lst);
+}
