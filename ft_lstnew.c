@@ -6,7 +6,7 @@
 /*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:46:45 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 20:53:05 by nyx              ###   ########.fr       */
+/*   Updated: 2024/11/04 21:49:25 by nyx              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *node;
+ 	t_list *node;
+  
 	node = (t_list *)malloc(sizeof(t_list));
-    if (!node)
-        return NULL;
-	node->content = content;
-	node->next = NULL;
-	return (node);
+        if (!node)
+          return NULL;
+        node->content = content;
+        node->next = NULL;
+        return (node);
 }

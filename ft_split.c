@@ -6,7 +6,7 @@
 /*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:48:39 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 17:40:57 by nyx              ###   ########.fr       */
+/*   Updated: 2024/11/04 21:51:59 by nyx              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int	count(const char *s, char c)
 {
-	int	i = 0, count;
+	int	i = 0, count_elements;
 
-	i = 0, count = 0;
+	i = 0, count_elements = 0;
 	while (s[i])
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
-			count++;
+			count_elements++;
 		i++;
 	}
-	return (count);
+	return (count_elements);
 }
 void	ft_fill(char const *s, char **p, char cc, int count)
 {
