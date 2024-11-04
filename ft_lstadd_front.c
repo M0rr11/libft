@@ -6,13 +6,14 @@
 /*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:46:56 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 14:46:57 by nyx              ###   ########.fr       */
+/*   Updated: 2024/11/04 18:49:40 by nyx              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new) {
-  new->next = *lst;
-  *lst = new;
+void	ft_lstadd_front(t_list **lst, t_list *new_node)
+{
+	new_node->next = *lst;
+	*lst = new_node;
 }
