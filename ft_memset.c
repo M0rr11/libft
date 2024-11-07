@@ -23,6 +23,6 @@ void	*ft_memset(void *s, int c, size_t n)
 	{
 		x[i] = w;
 		i++;
-    }
-    return((void *)x);
+	}
+	return ((void *)x);
 }

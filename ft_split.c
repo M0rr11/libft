@@ -6,7 +6,7 @@
 /*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:48:39 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 21:51:59 by nyx              ###   ########.fr       */
+/*   Updated: 2024/11/07 21:03:19 by nyx              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	count(const char *s, char c)
 {
-	int	i = 0, count_elements;
+	int	i;
 
+	int count_elements;
 	i = 0, count_elements = 0;
 	while (s[i])
 	{
@@ -47,23 +48,18 @@ void	ft_fill(char const *s, char **p, char cc, int count)
 	}
 	p[j] = NULL;
 }
-char	**ft_split(char const *str, char c)
-{
-	int		ct;
-	char	**sp;
-	int		i = 0, j;
-        int k;
-        int l;
-
-	ct = count(str, c);
-	sp = (char **)malloc((ct + 1) * sizeof(char *));
-	if (sp == NULL)
-		return (NULL);
-	i = 0, j = 0;
-	while (str[i] == c)
-		i++;
-	while (j < ct && str[i])
-	{
+void aloc(char const *str, int ct, char c, char **sp) {
+  int k;
+  int i;
+  int l;
+  int j;
+  j = 0;
+  i = 0;
+  k = 0;
+  l = 0;
+        while (str[i] == c)
+          i++;
+  		while (j < ct && str[i]) {
 		l = 0;
 		while (str[i + l] && str[i + l] != c)
 			l++;
@@ -75,22 +71,34 @@ char	**ft_split(char const *str, char c)
 				free(sp[k]);
 			free(sp);
 			k++;
-			return (NULL);
+			return;
 		}
-		j++;
+                j ++;
+                i += l;
 		if (str[i] == c)
-			i++;
-	}
+                  i++;        
+  }
+}
+char	**ft_split(char const *str, char c)
+{
+	int		ct;
+        char **sp;
+        
+	ct = count(str, c);
+	sp = (char **)malloc((ct + 1) * sizeof(char *));
+	if (sp == NULL)
+		return (NULL);
+    aloc(str, ct,c,sp);    
 	ft_fill(str, sp, c, ct);
 	return (sp);
 }
-/*#include <stdio.h>
-#include <stdlib.h>
 
-int	main(void) {
-  char *s = "hello lol lalala";
-  char **pp = ft_split(s,'o');
-  for (int i = 0; i < 3; i++) {
-	printf("%s\n",pp[i]);
-  }
-  }*/
+/*#include <stdio.h>
+
+int main() {
+  char s[] = "lol i don't know";
+  char **p = ft_split(s, ' ');
+  for (int i = 0; i < count(s, ' '); i++) {
+    printf("%s\n",p[i]);
+	}
+	}*/

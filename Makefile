@@ -1,8 +1,9 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR	= ar rs
-RM	= rm -r
-FILES	= ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_strlen \
+RM	= rm -f
+
+FILES	= ft_isascii ft_isalpha ft_isdigit ft_isalnum ft_strlen \
 	   ft_toupper ft_tolower ft_strchr ft_strrchr ft_strncmp \
 	   ft_strnstr ft_strlcpy ft_strlcat ft_atoi ft_strdup \
 	   ft_substr ft_strjoin ft_split ft_itoa ft_strmapi \
@@ -26,7 +27,7 @@ bonus: $(BOBJ)
 $(NAME): $(LIB) $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-clean:
+clean: 
 	$(RM) $(OBJ) $(BOBJ)
 
 fclean: clean

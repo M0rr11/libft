@@ -6,7 +6,7 @@
 /*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:47:35 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 14:47:36 by nyx              ###   ########.fr       */
+/*   Updated: 2024/11/07 20:27:17 by nyx              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@ int	count(int n)
 {
 	int	count;
 
-	count = 1;
+    count = 1;
+    if (n < 0)
+	{
+		count++;  
+		n *= -1;  
+	}
 	while (n / 10 != 0)
 	{
 		count++;
@@ -26,24 +31,28 @@ int	count(int n)
 }
 char	*ft_itoa(int nbr)
 {
-	int long n = nbr;
-	int l = count(n);
-	int s = 0;
-
-	if (n < 0)
-	{
-		s = 1;
-		n *= -1;
-	}
-	char *str = malloc(l + 1);
-	if (s == 1)
-		str[0] = '-';
-	str[l + s] = '\0';
-	while (l > 0)
-	{
-		str[l + s - 1] = n % 10 + 48;
-		n /= 10;
-		l--;
-	}
-	return (str);
+    long n;
+    int l;
+    int s;
+    n = nbr;
+    l = count(n);
+    s = 0;
+    if (n < 0)
+    {
+        s = 1;
+        n *= -1;
+    }
+    char *str = malloc(l + 1);
+    if (str == NULL)
+		return (NULL); 
+    if (s)
+      str[0] = '-';
+    str[l] = '\0';
+    while (l  > s)
+    {
+        str[l - 1] = (n % 10) + 48;
+        n /= 10;
+        l--;
+    }
+    return (str);
 }

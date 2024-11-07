@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:48:02 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 19:17:03 by nyx              ###   ########.fr       */
+/*   Updated: 2024/11/07 21:01:55 by nyx              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst) {
+int	ft_lstsize(t_list *lst)
+{
   int count;
-  while (lst) {
-    count++;
-    lst = lst->next;
-  }
-  return (count);
-  }
+  count = 0;
+
+  while (lst)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
+}

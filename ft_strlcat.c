@@ -6,7 +6,7 @@
 /*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:49:02 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 14:49:03 by nyx              ###   ########.fr       */
+/*   Updated: 2024/11/06 17:26:15 by nyx              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dl = ft_strlen(dst);
 	sl = ft_strlen(src);
 
-	if (dl == size)
-		return (dl + sl);
-
-	while (src[i] && i < size)
+	if (size <= dl)
+		return (size + sl);
+	while (src[i] && dl + i < size - 1)
 	{
 		dst[dl + i] = src[i];
 		i++;
