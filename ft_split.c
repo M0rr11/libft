@@ -6,7 +6,7 @@
 /*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:48:39 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/07 21:03:19 by nyx              ###   ########.fr       */
+/*   Updated: 2024/11/08 18:43:14 by nyx              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,10 @@ void aloc(char const *str, int ct, char c, char **sp) {
   i = 0;
   k = 0;
   l = 0;
-        while (str[i] == c)
-          i++;
-  		while (j < ct && str[i]) {
+
+     while (j < ct && str[i]) {
+       while (str[i] == c)
+         i++;
 		l = 0;
 		while (str[i + l] && str[i + l] != c)
 			l++;
@@ -82,7 +83,7 @@ void aloc(char const *str, int ct, char c, char **sp) {
 char	**ft_split(char const *str, char c)
 {
 	int		ct;
-        char **sp;
+    char **sp;
         
 	ct = count(str, c);
 	sp = (char **)malloc((ct + 1) * sizeof(char *));
@@ -93,12 +94,13 @@ char	**ft_split(char const *str, char c)
 	return (sp);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 
 int main() {
-  char s[] = "lol i don't know";
-  char **p = ft_split(s, ' ');
-  for (int i = 0; i < count(s, ' '); i++) {
+  char **p = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
+  for (int i = 0; i < count("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' '); i++)
+  {
+      printf("%d\t", count ("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' '));
     printf("%s\n",p[i]);
-	}
-	}*/
+  }
+}
