@@ -26,3 +26,10 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return ((void *)x);
 }
+#include <stdio.h>
+
+int main()
+{
+	char s[20] = "GFREF";
+	printf("%s\n",ft_memset(s,65,3));
+}

@@ -14,8 +14,8 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char *str1 = (const unsigned char *)s1;
-	const unsigned char *str2 = (const unsigned char *)s2;
+	unsigned char *str1 = (unsigned char *)s1;
+	unsigned char *str2 = (unsigned char *)s2;
 	size_t i;
     i = 0;
         
@@ -26,4 +26,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		i++;
 	}
 	return (0);
+}
+
+int main()
+{
+	printf("%d\n", ft_memcmp("alloa","allpa",1));
 }

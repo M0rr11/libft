@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char		*d;
@@ -35,3 +36,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(d, s, n);
 	return (dest);
 }
+// #include <stdio.h>
+// int main ()
+// {
+// 	char s[20] = "ABCDEF";
+// 	char s1[20] = "ABCDEF";
+// 	printf("%s\n",ft_memmove(s +2,s,0));
+// 	printf("%s\n", memmove(s1 +2,s1,0));
+// }
