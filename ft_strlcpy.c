@@ -15,11 +15,10 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t i;
+	
 	i = 0;
-
 	if (size == 0)
 		return (ft_strlen(src));
-
 	while (src[i] && i < size - 1)
 	{
 		dst[i] = src[i];
@@ -28,3 +27,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (ft_strlen(src));
 }
+
+// #include <string.h>
+// int main ()
+// {
+// 	char str1[] = "hello, world";
+// 	char str2[] = "hi";
+
+// 	ft_strlcpy(NULL, NULL, 0);
+// 	printf("%s\n", str1 + 4);
+// }

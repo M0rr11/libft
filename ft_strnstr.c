@@ -29,3 +29,9 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	}
 	return (NULL);
 }
+//TODO: FIX THIS
+// #include <string.h>
+// int main ()
+// {
+// 	//ft_strnstr(NULL , "ss", 0); SEGV
+// }

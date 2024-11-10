@@ -32,8 +32,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[dl + i] = '\0';
 	return (dl + sl);
 }
-
+// #include <string.h>
 // int main ()
 // {
-// 	strnstr(NULL, NULL, 0);
+// 	//ft_strlcat(NULL, "ss", 0);
 // }

@@ -101,29 +101,29 @@ char	**ft_split(char const *str, char c)
 	return (sp);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main() {
-  char **p = ft_split("", '\0');
-  /*for (int i = 0; i < count(NULL, ' '); i++)
-  {
-      printf("%d\t", count (NULL, ' '));
-    printf("%s\n",p[i]);
-  }*/
-  int i = 0;
-  if (p == NULL)
-	return (71);
-  while (p[i])
-  {
-    printf("%s",p[i]);
-	printf("\n");
-	i++;
-  }
-  i = 0;
-  while (p[i])
-  {
-	free(p[i]);
-	i++;
-  }
-  free (p);
-}
+// int main() {
+//   char **p = ft_split("", '\0');
+//   /*for (int i = 0; i < count(NULL, ' '); i++)
+//   {
+//       printf("%d\t", count (NULL, ' '));
+//     printf("%s\n",p[i]);
+//   }*/
+//   int i = 0;
+//   if (p == NULL)
+// 	return (71);
+//   while (p[i])
+//   {
+//     printf("%s",p[i]);
+// 	printf("\n");
+// 	i++;
+//   }
+//   i = 0;
+//   while (p[i])
+//   {
+// 	free(p[i]);
+// 	i++;
+//   }
+//   free (p);
+// }

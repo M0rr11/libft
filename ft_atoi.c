@@ -37,3 +37,9 @@ int	ft_atoi(const char *s)
 	}
 	return (r * si);
 }
+
+// int main ()
+// {
+// 	int i = atoi("893489574897353498957349");
+// 	printf("%d\n", i);
+// }

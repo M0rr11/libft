@@ -18,9 +18,9 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
     size_t i;
     size_t s_len;
 
-    s_len = ft_strlen(s);
 	if (!s)
-          return (NULL);
+    	return (NULL);
+    s_len = ft_strlen(s);
     if (start > s_len)
       return (ft_strdup(""));
     if (len > s_len - start)
@@ -37,12 +37,10 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	p[i] = '\0';
 	return (p);
 }
-/*
-#include <stdio.h>
 
 int main ()
 {
-    char *i  ;
-    i = ft_substr("NULL", 400, 20);
+    char *i;
+    i = ft_substr(NULL, 400, 20);
     printf("%s", i);
-}*/
+}

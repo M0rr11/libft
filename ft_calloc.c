@@ -14,19 +14,24 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	if (count == 0 || size == 0)
-		return (NULL);
-
 	unsigned char *p;
+	size_t i;
+	
 	p = malloc(sizeof(char) * (count * size));
 	if (p == NULL)
 		return (NULL);
-	size_t i;
 	i = 0;
 	while (i < size * count)
 	{
+		printf("s\n");
 		p[i] = 0;
 		i++;
 	}
 	return (p);
 }
+
+// int main ()
+// {
+// 	//char *s = ft_calloc(4783657384,  434);
+// 	printf("%s\n", s);
+// }

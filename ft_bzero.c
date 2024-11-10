@@ -26,11 +26,11 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-int main()
-{
-	char s[23]= "allo";
-	printf("%s\n",s);
-	bzero(s,1);
-	// allo  \0llo
-	printf("%s\n",s + 1);
-}
+// int main()
+// {
+// 	char s[23]= "allo";
+// 	printf("%s\n",s);
+// 	bzero(s,1);
+// 	// allo  \0llo
+// 	printf("%s\n",s + 1);
+// }
