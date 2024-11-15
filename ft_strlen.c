@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ayhakimi <ayhakimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:49:11 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 21:46:43 by nyx              ###   ########.fr       */
+/*   Created: 2024/11/14 21:59:07 by ayhakimi          #+#    #+#             */
+/*   Updated: 2024/11/15 07:01:42 by ayhakimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {
-	size_t i;
+	size_t	i;
+
 	i = 0;
 	while (str[i])
 	{

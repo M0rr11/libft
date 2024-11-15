@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ayhakimi <ayhakimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:48:05 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/06 17:33:46 by nyx              ###   ########.fr       */
+/*   Created: 2024/11/14 21:56:14 by ayhakimi          #+#    #+#             */
+/*   Updated: 2024/11/14 21:56:17 by ayhakimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const char *st = (char *)s;
-	const char cc = c;
-	size_t i;
+	const char	*st = (char *)s;
+	const char	cc = c;
+	size_t		i;
+
 	i = 0;
 	while (i < n)
 	{

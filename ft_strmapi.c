@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ayhakimi <ayhakimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:49:14 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 21:45:32 by nyx              ###   ########.fr       */
+/*   Created: 2024/11/14 21:59:24 by ayhakimi          #+#    #+#             */
+/*   Updated: 2024/11/14 21:59:27 by ayhakimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	size_t i;
-	char *res;
+	size_t	i;
+	char	*res;
 
+	if (!s || !f)
+		return (NULL);
 	res = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!res)
 		return (NULL);

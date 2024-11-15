@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ayhakimi <ayhakimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:48:22 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 21:47:47 by nyx              ###   ########.fr       */
+/*   Created: 2024/11/14 21:57:02 by ayhakimi          #+#    #+#             */
+/*   Updated: 2024/11/16 00:29:17 by ayhakimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,17 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	char *x = (char *)s;
-	char w = c;
-	size_t i;
-	i = 0;
+	char	*x;
+	char	w;
+	size_t	i;
 
+	x = (char *)s;
+	w = c;
+	i = 0;
 	while (i < n)
 	{
 		x[i] = w;
 		i++;
 	}
-	return ((void *)x);
+	return (s);
 }
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char s[20] = "GFREF";
-// 	printf("%s\n",ft_memset(s,65,3));
-// }

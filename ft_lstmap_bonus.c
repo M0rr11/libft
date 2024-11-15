@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ayhakimi <ayhakimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:47:57 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/07 21:05:14 by nyx              ###   ########.fr       */
+/*   Created: 2024/11/14 21:55:44 by ayhakimi          #+#    #+#             */
+/*   Updated: 2024/11/14 21:55:48 by ayhakimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *list;
-	t_list *tmp;
-	t_list *node;
+	t_list	*list;
+	t_list	*tmp;
+	t_list	*node;
 
-	tmp = lst;
 	list = NULL;
 	node = NULL;
 	if (!lst || !f || !del)
 		return (NULL);
+	tmp = lst;
 	while (tmp)
 	{
 		node = ft_lstnew(f(tmp->content));

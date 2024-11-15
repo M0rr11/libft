@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ayhakimi <ayhakimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:47:01 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/08 20:56:10 by ayhakimi         ###   ########.fr       */
+/*   Created: 2024/11/14 21:52:41 by ayhakimi          #+#    #+#             */
+/*   Updated: 2024/11/15 06:21:40 by ayhakimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *s)
 {
-	int	r;
-	int	si;
-	int	i;
+	long	r;
+	int		si;
+	int		i;
 
 	r = 0;
 	si = 1;
@@ -27,7 +27,7 @@ int	ft_atoi(const char *s)
 	if (s[i] == '-' || s[i] == '+')
 	{
 		if (s[i] == '-')
-			si = -1;
+			si *= -1;
 		i++;
 	}
 	while (s[i] >= '0' && s[i] <= '9')
@@ -37,9 +37,3 @@ int	ft_atoi(const char *s)
 	}
 	return (r * si);
 }
-
-// int main ()
-// {
-// 	int i = atoi("893489574897353498957349");
-// 	printf("%d\n", i);
-// }

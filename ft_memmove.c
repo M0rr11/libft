@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ayhakimi <ayhakimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:48:19 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 14:48:20 by nyx              ###   ########.fr       */
+/*   Created: 2024/11/14 21:56:43 by ayhakimi          #+#    #+#             */
+/*   Updated: 2024/11/14 21:56:46 by ayhakimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -36,11 +35,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(d, s, n);
 	return (dest);
 }
-// #include <stdio.h>
-// int main ()
-// {
-// 	char s[20] = "ABCDEF";
-// 	char s1[20] = "ABCDEF";
-// 	printf("%s\n",ft_memmove(s +2,s,0));
-// 	printf("%s\n", memmove(s1 +2,s1,0));
-// }

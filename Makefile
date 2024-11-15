@@ -16,15 +16,15 @@ BFILES  = ft_lstnew_bonus ft_lstadd_front_bonus \
 
 OBJ=$(FILES:=.o)
 BOBJ=$(BFILES:=.o)
-NAME=libft.a
+NAME=libft.a 
 LIB=libft.h
 
-all: $(NAME)
+all: $(NAME) 
 
 bonus: $(BOBJ)
 	$(AR) $(NAME) $(BOBJ)
 
-$(NAME): $(LIB) $(OBJ)
+$(NAME): $(LIB) $(OBJ) 
 	$(AR) $(NAME) $(OBJ)
 
 clean: 

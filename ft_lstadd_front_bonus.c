@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ayhakimi <ayhakimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:46:56 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/04 18:49:40 by nyx              ###   ########.fr       */
+/*   Created: 2024/11/14 21:54:46 by ayhakimi          #+#    #+#             */
+/*   Updated: 2024/11/14 22:02:18 by ayhakimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new_node)
 {
+	if (lst == NULL || new_node == NULL)
+		return ;
 	new_node->next = *lst;
 	*lst = new_node;
 }

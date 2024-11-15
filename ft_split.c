@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nyx <nyx@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ayhakimi <ayhakimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:48:39 by nyx               #+#    #+#             */
-/*   Updated: 2024/11/08 18:43:14 by nyx              ###   ########.fr       */
+/*   Created: 2024/11/14 21:57:56 by ayhakimi          #+#    #+#             */
+/*   Updated: 2024/11/14 22:39:10 by ayhakimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	count(const char *s, char c)
 {
 	int	i;
-	int cnt;
+	int	cnt;
 
 	i = 0;
 	cnt = 0;
@@ -27,6 +27,7 @@ int	count(const char *s, char c)
 	}
 	return (cnt);
 }
+
 void	ft_fill(char const *s, char **p, char cc, int count)
 {
 	int	j;
@@ -35,6 +36,8 @@ void	ft_fill(char const *s, char **p, char cc, int count)
 
 	j = 0;
 	i = 0;
+	if (p == NULL)
+		return ;
 	while (j < count && s[i])
 	{
 		while (s[i] == cc)
@@ -49,81 +52,62 @@ void	ft_fill(char const *s, char **p, char cc, int count)
 	}
 	p[j] = NULL;
 }
-void 	aloc(char const *str, int ct, char c, char **sp) {
-  int	k;
-  int	i;
-  int	l;
-  int	j;
 
-  j = 0;
-  i = 0;
-  k = 0;
-  l = 0;
-  while (j < ct && str[i])
-  {
-	while (str[i] == c)
-	i++;
-	l = 0;
-	while (str[i + l] && str[i + l] != c)
-	l++;
-	sp[j] = (char *)malloc((l + 1) * sizeof(char));
-	if (!sp[j])
+void	destroy_sp(char **sp, int index)
+{
+	int	k;
+
+	k = 0;
+	while (k < index)
 	{
-		k = 0;
-		while (k < j)
-		{
-			free(sp[k]);
-			k++;
-		}
-		free(sp);
-		return;
+		free(sp[k]);
+		k++;
 	}
-	j ++;
-	i += l;
-	if (str[i] == c)
-	i++;        
+	free(sp);
+	return ;
 }
+
+void	aloc(char const *str, int ct, char c, char **sp)
+{
+	int	i;
+	int	l;
+	int	j;
+
+	j = 0;
+	i = 0;
+	while (j < ct && str[i])
+	{
+		while (str[i] == c)
+			i++;
+		l = 0;
+		while (str[i + l] && str[i + l] != c)
+			l++;
+		sp[j] = (char *)malloc((l + 1) * sizeof(char));
+		if (!sp[j])
+		{
+			destroy_sp(sp, j);
+			sp = NULL;
+			return ;
+		}
+		j++;
+		i += l;
+		if (str[i] == c)
+			i++;
+	}
 }
 
 char	**ft_split(char const *str, char c)
 {
 	int		ct;
-    char **sp;
-    
-	if(str == NULL)
-		return NULL;
+	char	**sp;
+
+	if (!str)
+		return (NULL);
 	ct = count(str, c);
 	sp = (char **)malloc((ct + 1) * sizeof(char *));
 	if (sp == NULL)
 		return (NULL);
-    aloc(str, ct,c,sp);    
+	aloc(str, ct, c, sp);
 	ft_fill(str, sp, c, ct);
 	return (sp);
 }
-
-// #include <stdio.h>
-
-// int main() {
-//   char **p = ft_split("", '\0');
-//   /*for (int i = 0; i < count(NULL, ' '); i++)
-//   {
-//       printf("%d\t", count (NULL, ' '));
-//     printf("%s\n",p[i]);
-//   }*/
-//   int i = 0;
-//   if (p == NULL)
-// 	return (71);
-//   while (p[i])
-//   {
-//     printf("%s",p[i]);
-// 	printf("\n");
-// 	i++;
-//   }
-//   i = 0;
-//   while (p[i])
-//   {
-// 	free(p[i]);
-// 	i++;
-//   }
-//   free (p);
-// }
